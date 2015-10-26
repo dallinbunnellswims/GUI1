@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+#include <string>
 
 namespace GUI1 {
 
@@ -35,6 +37,7 @@ namespace GUI1 {
 			}
 		}
 		int clicks = 0;
+		int clicks1 = 0;
 	private: System::Windows::Forms::Button^  button_mainButton;
 	protected:
 
@@ -246,20 +249,30 @@ private: System::Void label1_MouseHover(System::Object^  sender, System::EventAr
 }
 private: System::Void label1_MouseDown(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
 	//I need to work on this a little bit. THis isn't working. I'll probably have to use a vector or array
-	while (clicks < 11)
+	while (clicks1 < 16)
 	{
-		textBox2->Text = "Hehe you poked me\r\n";
-		textBox2->Text = "Stop it! it tickles!\r\n";
-		textBox2->Text = "hahahahahahahaha!\r\n";
-		textBox2->Text = "Okay, it's getting a little annoying!\r\n";
-		textBox2->Text = "Really dude, you'd better stop\r\n";
-		textBox2->Text = "Ouch! quit poking me! That hurts!";
-		textBox2->Text = "I'm going to start crying!\r\n";
-		textBox2->Text = "Ouch! quit poking me! That hurts!";
-		textBox2->Text = "Ouch! quit poking me! That hurts!";
-		textBox2->Text = "Ouch! quit poking me! That hurts!";
-		textBox2->Text = "Ouch! quit poking me! That hurts!";
-	}
+		std::vector<std::string> strings;
+		strings[0] = "Hehe you poked me.\r\n";
+		strings[1] = "Stop it! it tickles!\r\n";
+		strings[2] = "hahahahahahahaha!\r\n";
+		strings[3] = "Okay, it's getting a little annoying!\r\n";
+		strings[4] = "Really dude, you'd better stop.\r\n";
+		strings[5] = "Ouch! Quit poking me! That hurts!";
+		strings[6] = "I'm going to start crying!\r\n";
+		strings[7] = "Are you really going to do this?\r\n ";
+		strings[8] = "Great I'm crying :'( :'( :'( \r\n";
+		strings[9] = "You're so evil. We're not even friends any more.\r\n";
+		strings[10] = "I'm just going to ignore you now."; 
+		strings[11] = "   \r\n";
+		strings[12] = "   \r\n";
+		strings[13] = "   \r\n";
+		strings[14] = "I'm going to call the cops if you don't stop!\r\n";
+		strings[15] = "I'm serious!\r\n";
+
+		//textBox2->Text = strings[clicks1];
+		textBox2->Text = strings[clicks1];
+		clicks1++;
+	};
 	
 }
 private: System::Void label1_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
